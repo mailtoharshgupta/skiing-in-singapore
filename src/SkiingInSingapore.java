@@ -93,7 +93,7 @@ public class SkiingInSingapore {
      * @param util
      * @return List of Grid having the longest path from x,y( row, column )
      *
-     * This uses the DFS technique to find the longest and the largest path
+     * This uses the DFS technique to find the longest path and the largest drop
      */
     private List<Grid> getLongestSkiingPathFromGrid(int x, int y, int mountainMatrix[][], int util[][]){
 
@@ -124,6 +124,15 @@ public class SkiingInSingapore {
 
     }
 
+    /**
+     *
+     * @param pathToFile
+     * @return
+     * @throws IOException
+     * @throws URISyntaxException
+     *
+     * A util function to parse data from the file into a matrix
+     */
     private int[][] parseDataFromFile(String pathToFile) throws IOException,URISyntaxException{
 
         int mountainMatrix[][];
@@ -152,6 +161,7 @@ public class SkiingInSingapore {
 
             int currentColumn = 0;
 
+            // parsing every line into a corresponding grid
             for(String column : columnValues){
                     mountainMatrix[currentRow][currentColumn++] = Integer.valueOf(column);
             }
